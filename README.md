@@ -97,6 +97,10 @@ max_allowed_packet=1G
 mysqlx_max_allowed_packet=1G
 ```
 
+For remote connection to the database, we replaced the "localhost" within the access limit to % meaning from everywhere. 
+
+![remoteaccesimg](img/remoteaccess_for_root.png)
+
 ### Setup
 
 First we have to create a new database called `weathercrash`. Afterwards we import the data (which is in CSV, converted from JSON) into the database.
@@ -130,6 +134,9 @@ scoop install openjdk metabase
 
 metabase  # Start the metabase server
 ```
+
+The port used is 3000
+On the Windows VM we added an exception for java.exe to allow remote connectivity to metabase.
 
 Setup a new user. In our case:
 
