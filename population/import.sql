@@ -1,18 +1,19 @@
 USE weathercrash;
 
-DROP TABLE population;
+DROP TABLE IF EXISTS population;
 
 CREATE TABLE IF NOT EXISTS population (
+    uid INT NOT NULL AUTO_INCREMENT,
     year INT,
     canton_code VARCHAR(2),
     population_start INT,
     population_end INT,
-    PRIMARY KEY (year, canton_code)
+    PRIMARY KEY (uid)
 ) ENGINE=InnoDB;
 
 SET GLOBAL local_infile = 1;  -- Enable loading local flies
 
-LOAD DATA LOCAL INFILE 'C:/Users/labadmin/Desktop/Project/population/Population.csv'
+LOAD DATA LOCAL INFILE './population/population.csv'
 INTO TABLE population
 FIELDS TERMINATED BY ',' ENCLOSED BY '"'
 LINES TERMINATED BY '\n'

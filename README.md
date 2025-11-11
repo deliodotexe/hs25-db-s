@@ -73,6 +73,12 @@ To import it use:
 mysqlsh --sql -u root -h localhost -f ./population/import.sql
 ```
 
+After importing the population data. You can connect them with the accidents. This operation will take some time (~1.5min).
+
+```sh
+mysqlsh --sql -u root -h localhost -f ./road-accidents/connect_population.sql
+```
+
 ## MySQL
 
 ### Installation
