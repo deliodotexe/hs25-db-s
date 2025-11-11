@@ -132,6 +132,7 @@ index f87f2c2..e2db43a 100644
 
  # Defines the amount of disk space occupied by redo log files. This variable supersedes the
  # innodb_log_files_in_group and innodb_log_file_size variables.```
+```
 
 ### Setup
 
@@ -139,7 +140,7 @@ First we have to create a new database called `weathercrash`. Afterwards we impo
 
 ```sh
 # Create the "weathercrash" database
-mysqlsh --sql -u root -p -h localhost --execute "CREATE DATABASE weathercrash";   # Let it save the password so you don't have to enter it every time
+mysqlsh --sql -u root -p -h localhost --execute "CREATE DATABASE weathercrash;"   # Let it save the password so you don't have to enter it every time
 
 # Import the json into the database
 mysqlsh -u root -h localhost --execute "util.importJson('RoadTrafficAccidentLocations.json', {schema: 'weathercrash', table: 'accidents', tableColumn: 'features'})"
