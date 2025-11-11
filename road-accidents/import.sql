@@ -30,6 +30,7 @@ CREATE TABLE IF NOT EXISTS accidents (
     id INT AUTO_INCREMENT PRIMARY KEY,
     accident_type_uid VARCHAR(10),
     severity_category_uid VARCHAR(10),
+    road_type_uid VARCHAR(10),
     involving_pedestrian BOOLEAN,
     involving_bicycle BOOLEAN,
     involving_motorcycle BOOLEAN,
@@ -42,6 +43,7 @@ CREATE TABLE IF NOT EXISTS accidents (
     timestamp BIGINT,
     FOREIGN KEY (accident_type_uid) REFERENCES accident_types(uid),
     FOREIGN KEY (severity_category_uid) REFERENCES severity_categories(uid),
+    FOREIGN KEY (road_type_uid) REFERENCES road_types(uid),
     INDEX idx_timestamp (timestamp),
     INDEX idx_coords (longitude, latitude)
 ) ENGINE=InnoDB;
@@ -75,7 +77,7 @@ INTO TABLE accidents
 FIELDS TERMINATED BY ',' ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 LINES
-(accident_type_uid, severity_category_uid, @ped, @bic, @mot, longitude, latitude, swiss_e, swiss_n, canton_code, municipality_code, @timestamp)
+(accident_type_uid, severity_category_uid, road_type_uid, @ped, @bic, @mot, longitude, latitude, swiss_e, swiss_n, canton_code, municipality_code, @timestamp)
 SET
     involving_pedestrian = (@ped = 'true'),
     involving_bicycle = (@bic = 'true'),

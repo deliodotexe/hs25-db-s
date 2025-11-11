@@ -37,6 +37,7 @@
 
 - **accident_type_uid**: Foreign key to accident_types.uid.
 - **severity_category_uid**: Foreign key to severity_categories.uid.
+- **road_type_uid**: Foreign key to road_types.uid.
 - **involving_pedestrian**: "true" if pedestrian involved, else "false".
 - **involving_bicycle**: "true" if bicycle involved, else "false".
 - **involving_motorcycle**: "true" if motorcycle involved, else "false".
