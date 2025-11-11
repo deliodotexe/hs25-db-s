@@ -97,9 +97,35 @@ max_allowed_packet=1G
 mysqlx_max_allowed_packet=1G
 ```
 
-For remote connection to the database, we replaced the "localhost" within the access limit to % meaning from everywhere. 
+For remote connection to the database, we replaced the "localhost" within the access limit to % meaning from everywhere.
 
 ![remoteaccesimg](img/remoteaccess_for_root.png)
+
+#### Performance Optimizations
+
+```diff
+diff --git "a/C:\\ProgramData\\MySQL\\MySQL Server 8.0\\my.ini.bak" "b/C:\\ProgramData\\MySQL\\MySQL Server 8.0\\my.ini"
+index f87f2c2..e2db43a 100644
+--- "a/C:\\ProgramData\\MySQL\\MySQL Server 8.0\\my.ini.bak"
++++ "b/C:\\ProgramData\\MySQL\\MySQL Server 8.0\\my.ini"
+@@ -184,7 +184,7 @@ temptable_max_ram=1G
+ # by the MEMORY storage engine and, as of MySQL 8.0.28, the TempTable storage
+ # engine. If an internal in-memory temporary table exceeds this size, it is
+ # automatically converted to an on-disk internal temporary table.
+-tmp_table_size=23M
++tmp_table_size=1G
+
+ # The storage engine for in-memory internal temporary tables (see Section 8.4.4, "Internal
+ # Temporary Table Use in MySQL"). Permitted values are TempTable (the default) and MEMORY.
+@@ -254,7 +254,7 @@ innodb_log_buffer_size=16M
+ # stated maximum. When the size of the buffer pool is greater than 1GB, setting
+ # innodb_buffer_pool_instances to a value greater than 1 can improve the scalability on
+ # a busy server.
+-innodb_buffer_pool_size=128M
++innodb_buffer_pool_size=2G
+
+ # Defines the amount of disk space occupied by redo log files. This variable supersedes the
+ # innodb_log_files_in_group and innodb_log_file_size variables.```
 
 ### Setup
 
