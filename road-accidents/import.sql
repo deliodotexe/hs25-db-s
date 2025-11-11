@@ -51,28 +51,28 @@ CREATE TABLE IF NOT EXISTS accidents (
 -- Load data (use LOCAL for client-side files)
 SET GLOBAL local_infile = 1;  -- Enable loading local files
 
-LOAD DATA LOCAL INFILE 'C:/Users/labadmin/Desktop/Project/road-accidents/accident_types.csv'
+LOAD DATA LOCAL INFILE 'road-accidents/accident_types.csv'
 INTO TABLE accident_types
 FIELDS TERMINATED BY ',' ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 LINES
 (uid, name_de, name_fr, name_it, name_en);
 
-LOAD DATA LOCAL INFILE 'C:/Users/labadmin/Desktop/Project/road-accidents/severity_categories.csv'
+LOAD DATA LOCAL INFILE 'road-accidents/severity_categories.csv'
 INTO TABLE severity_categories
 FIELDS TERMINATED BY ',' ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 LINES
 (uid, name_de, name_fr, name_it, name_en);
 
-LOAD DATA LOCAL INFILE 'C:/Users/labadmin/Desktop/Project/road-accidents/road_types.csv'
+LOAD DATA LOCAL INFILE 'road-accidents/road_types.csv'
 INTO TABLE road_types
 FIELDS TERMINATED BY ',' ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 LINES
 (uid, name_de, name_fr, name_it, name_en);
 
-LOAD DATA LOCAL INFILE 'C:/Users/labadmin/Desktop/Project/road-accidents/accidents.csv'
+LOAD DATA LOCAL INFILE 'road-accidents/accidents.csv'
 INTO TABLE accidents
 FIELDS TERMINATED BY ',' ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
