@@ -88,7 +88,7 @@ To be able to import large files such as our traffic database you have to change
 - `max_packet_allowed` - Maximum size of a packet a client can send to the server.
 - `mysqlx_max_allowed_packet` - X Plugin equivalent of `max_allowed_packet`. Used for the json import util.
 
-Change these in the default configuration file at: `sudo nvim 'C:\ProgramData\MySQL\MySQL Server 8.0\my.ini'`
+Change these in the default configuration file at: `sudo nvim 'C:\ProgramData\MySQL\MySQL Server 8.4\my.ini'`
 
 ```ini
 # The maximum size of one packet or any generated or intermediate string, or any parameter sent by the
@@ -104,10 +104,10 @@ For remote connection to the database, we replaced the "localhost" within the ac
 #### Performance Optimizations
 
 ```diff
-diff --git "a/C:\\ProgramData\\MySQL\\MySQL Server 8.0\\my.ini.bak" "b/C:\\ProgramData\\MySQL\\MySQL Server 8.0\\my.ini"
+diff --git "a/C:\\ProgramData\\MySQL\\MySQL Server 8.4\\my.ini.bak" "b/C:\\ProgramData\\MySQL\\MySQL Server 8.4\\my.ini"
 index f87f2c2..e2db43a 100644
---- "a/C:\\ProgramData\\MySQL\\MySQL Server 8.0\\my.ini.bak"
-+++ "b/C:\\ProgramData\\MySQL\\MySQL Server 8.0\\my.ini"
+--- "a/C:\\ProgramData\\MySQL\\MySQL Server 8.4\\my.ini.bak"
++++ "b/C:\\ProgramData\\MySQL\\MySQL Server 8.4\\my.ini"
 @@ -184,7 +184,7 @@ temptable_max_ram=1G
  # by the MEMORY storage engine and, as of MySQL 8.0.28, the TempTable storage
  # engine. If an internal in-memory temporary table exceeds this size, it is
