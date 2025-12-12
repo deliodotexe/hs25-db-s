@@ -183,3 +183,9 @@ Setup a new user. In our case:
 In order to connect to the database you have to allow `jdbc` to fetch the RSA public key from the server.
 
 Expand the additional setting in the bottom and add this to the `jdbc` connection options: `allowPublicKeyRetrieval=true`
+
+Within the Database, a new user has been made with access only from localhost (metabase)
+- Login Name: `metaviewer`
+- Password: `metaviewer101`
+![alt text](img/metaviewer_user.png)
+![alt text](img/metaviewer_permissions.png)
